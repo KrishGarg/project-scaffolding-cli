@@ -1,10 +1,14 @@
 {
   "name": "project-scaffolding-cli",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "main": "index.js",
   "license": "MIT",
   "bin": {
     "scaff": "index.js"
+  },
+  "scripts": {
+    "test": "jest",
+    "release": "generate-release"
   },
   "dependencies": {
     "chalk": "^4.1.2",
@@ -14,5 +18,15 @@
   },
   "engines": {
     "node": ">=0.16.9"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.0.2",
+    "generate-release": "^1.1.1",
+    "jest": "^27.3.1"
+  },
+  "jest": {
+    "testMatch": [
+      "**/__tests__/**/*.test.js"
+    ]
   }
 }

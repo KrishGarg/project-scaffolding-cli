@@ -1,0 +1,4 @@
+{
+  "post-commit-commands": ["yarn test"],
+  "post-complete-commands": ["yarn publish"]
+}

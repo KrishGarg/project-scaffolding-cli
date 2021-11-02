@@ -11,13 +11,13 @@ const make = (templateName, projectName = "new_app") => {
   const availableProjects = conf.get("available-projects");
 
   if (!(templateName in availableProjects)) {
-    log(chalk.red.bold("This project isn't in the available scripts."));
-    log(
-      chalk.yellow.bold(
+    throw new Error(
+      `${chalk.red.bold(
+        "This project isn't in the available scripts."
+      )}\n${chalk.yellow.bold(
         `Maybe it's a type? Check with the ${chalk.blue.bold("list")} command.`
-      )
+      )}`
     );
-    return;
   }
 
   if (fs.existsSync(projectName) && projectName !== ".") {

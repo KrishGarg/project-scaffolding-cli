@@ -40,7 +40,7 @@ describe("test make command", () => {
 
     cleanUp();
 
-    console.log(`no app one \n${result.stdout}`);
+    console.log(`no app one \n${JSON.stringify(result)}`);
     expect(result.stdout.length).toBeGreaterThan(0);
     expect(result.code).toBe(0);
     expect(result.error).toBeFalsy();
@@ -54,7 +54,6 @@ describe("test make command", () => {
 
     cleanUp(testAppName);
 
-    console.log(`given app one \n${result.stdout}`);
     expect(result.stdout.length).toBeGreaterThan(0);
     expect(result.code).toBe(0);
     expect(result.error).toBeFalsy();

@@ -1,5 +1,5 @@
 const chalk = require("chalk");
-const degit = require("degit");
+const degit = require("tiged");
 const fs = require("fs");
 const path = require("path");
 

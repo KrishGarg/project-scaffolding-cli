@@ -35,28 +35,17 @@ describe("test make command", () => {
 
   it("scaffolds the correct project with the given template name (no app name)", async () => {
     // Its a default template.
-    const result = await cli(["make", "vite-vanilla-tailwind"]);
+    await cli(["make", "vite-vanilla-tailwind"]);
     expect(fs.existsSync(DEFAULT_APP_NAME)).toBeTruthy();
 
     cleanUp();
-
-    console.log(`no app one \n${JSON.stringify(result)}`);
-    expect(result.stdout.length).toBeGreaterThan(0);
-    expect(result.code).toBe(0);
-    expect(result.error).toBeFalsy();
-    expect(result.stderr).toBeFalsy();
   });
 
   it("scaffolds the correct project with the given template name (app name given)", async () => {
     // Its a default template.
-    const result = await cli(["make", "vite-vanilla-tailwind", testAppName]);
+    await cli(["make", "vite-vanilla-tailwind", testAppName]);
     expect(fs.existsSync(testAppName)).toBeTruthy();
 
     cleanUp(testAppName);
-
-    expect(result.stdout.length).toBeGreaterThan(0);
-    expect(result.code).toBe(0);
-    expect(result.error).toBeFalsy();
-    expect(result.stderr).toBeFalsy();
   });
 });
